@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:cheviefutter/Components/rounded_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'Welcome Screen';
@@ -27,15 +29,27 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               children: <Widget>[
                 Text(
                   'CHEVIE',
-                  style: TextStyle(
-                    fontSize: 50.0,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.redAccent
+                  style: GoogleFonts.acme(
+                    textStyle: TextStyle(
+                        fontSize: 50.0,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.redAccent
+                    )
                   ),
                 ),
-                Icon(MaterialCommunityIcons.basketball, color: Colors.redAccent,)
+                Icon(
+                  MaterialCommunityIcons.football,
+                  color: Colors.redAccent,
+                  size: 50.0,
+                )
               ],
-            )
+            ),
+
+            SizedBox(height: 10.0),
+
+            RoundedButton(color: Colors.redAccent, buttonText: 'LOGIN', onPress: null),
+            RoundedButton(color: Colors.redAccent, buttonText: 'REGISTER', onPress: null)
+
           ],
         ),
       ),
