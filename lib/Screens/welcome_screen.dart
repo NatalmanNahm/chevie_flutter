@@ -47,8 +47,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
             SizedBox(height: 10.0),
 
-            RoundedButton(color: Colors.redAccent, buttonText: 'LOGIN', onPress: null),
-            RoundedButton(color: Colors.redAccent, buttonText: 'REGISTER', onPress: null)
+            RoundedButton(color: Colors.redAccent, buttonText: 'LOGIN',
+                onPress: null, topRight: 30.0, topLeft: 30.0, bottomLeft: 5.0,
+                bottomRight: 5.0),
+            RoundedButton(color: Colors.redAccent, buttonText: 'REGISTER',
+                onPress: null, topRight: 5.0, topLeft: 5.0, bottomLeft: 30.0,
+                bottomRight: 30.0)
 
           ],
         ),
