@@ -17,7 +17,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-
+            TextField(
+              keyboardType: TextInputType.text,
+              textAlign: TextAlign.center,
+              onChanged: (value){},
+              decoration: kTextFieldDecor,
+            )
           ],
         ),
       ),
