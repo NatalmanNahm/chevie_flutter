@@ -24,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
             children: <Widget>[
               ChevieLogo(),
 
-              SizedBox(height: 18.0),
+              SizedBox(height: 10.0),
 
               TextField(
                 keyboardType: TextInputType.emailAddress,

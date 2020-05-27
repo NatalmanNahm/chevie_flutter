@@ -23,7 +23,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             children: <Widget>[
               ChevieLogo(),
 
-              SizedBox(height: 18.0),
+              SizedBox(height: 10.0),
 
               TextField(
                 style: kTextFieldStyle,
