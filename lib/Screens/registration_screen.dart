@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cheviefutter/constants.dart';
 import 'package:cheviefutter/Components/rounded_button.dart';
+import 'package:cheviefutter/Components/chevie_logo.dart';
 
 class RegistrationScreen extends StatefulWidget {
 
@@ -20,6 +21,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              ChevieLogo(),
+
+              SizedBox(height: 18.0),
+
               TextField(
                 style: kTextFieldStyle,
                 keyboardType: TextInputType.text,

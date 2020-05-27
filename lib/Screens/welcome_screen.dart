@@ -1,8 +1,7 @@
 import 'package:cheviefutter/Screens/login_screen.dart';
 import 'package:cheviefutter/Screens/registration_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:cheviefutter/Components/chevie_logo.dart';
 import 'package:cheviefutter/Components/rounded_button.dart';
 import 'package:cheviefutter/constants.dart';
 
@@ -22,26 +21,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'CHEVIE',
-                  style: GoogleFonts.acme(
-                    textStyle: TextStyle(
-                        fontSize: 50.0,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.redAccent
-                    )
-                  ),
-                ),
-                Icon(
-                  MaterialCommunityIcons.football,
-                  color: Colors.redAccent,
-                  size: 50.0,
-                )
-              ],
-            ),
+            ChevieLogo(),
 
             SizedBox(height: 10.0),
 

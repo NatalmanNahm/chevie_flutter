@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cheviefutter/constants.dart';
 import 'package:cheviefutter/Components/rounded_button.dart';
+import 'package:cheviefutter/Components/chevie_logo.dart';
 
 class LoginScreen extends StatefulWidget {
 
@@ -21,6 +22,10 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              ChevieLogo(),
+
+              SizedBox(height: 18.0),
+
               TextField(
                 keyboardType: TextInputType.emailAddress,
                 decoration: kTextFieldDecor.copyWith(hintText: 'Email'),
