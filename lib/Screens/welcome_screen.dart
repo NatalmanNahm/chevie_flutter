@@ -1,3 +1,4 @@
+import 'package:cheviefutter/Screens/login_screen.dart';
 import 'package:cheviefutter/Screens/registration_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -47,7 +48,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             RoundedButton(color: Colors.redAccent, buttonText: 'LOGIN',
                 topRight: 30.0, topLeft: 30.0, bottomLeft: 5.0,
                 bottomRight: 5.0, onPress: (){
-                  Navigator.pushNamed(context, RegistrationScreen.id);
+                  Navigator.pushNamed(context, LoginScreen.id);
                 }),
             RoundedButton(color: Colors.redAccent, buttonText: 'REGISTER',
                 topRight: 5.0, topLeft: 5.0, bottomLeft: 30.0,

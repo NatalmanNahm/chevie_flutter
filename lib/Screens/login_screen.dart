@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cheviefutter/constants.dart';
+import 'package:cheviefutter/Components/rounded_button.dart';
 
 class LoginScreen extends StatefulWidget {
 
@@ -38,7 +39,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 cursorColor: Colors.white,
                 onChanged: (value) {},
                 style: kTextFieldStyle,
-              )
+              ),
+
+              SizedBox(height: 18.0),
+
+              RoundedButton(color: Colors.redAccent, buttonText: 'Login',
+                  onPress: null, topRight: 30.0, topLeft: 30.0,
+                  bottomRight: 30.0, bottomLeft: 30.0)
+
             ],
           ),
         ),
