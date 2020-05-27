@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cheviefutter/Components/rounded_button.dart';
+import 'package:cheviefutter/constants.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'Welcome Screen';
@@ -15,12 +16,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('images/men.jpg'),
-            fit: BoxFit.cover
-          )
-        ),
+        decoration: kBackgroundDecor,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
