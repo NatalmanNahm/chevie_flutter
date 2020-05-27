@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 const kBackgroundDecor = BoxDecoration(image: DecorationImage(
   image: AssetImage('images/men.jpg'), fit: BoxFit.cover));
-
+final kTextFieldStyle = TextStyle(fontSize: 18.0, color: Colors.white);
 const kTextFieldDecor = InputDecoration(
   hintText: '',
+  hintStyle: TextStyle(color: Colors.redAccent),
   contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
   border: OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(30.0)),
