@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cheviefutter/constants.dart';
 
 class RegistrationScreen extends StatefulWidget {
 
@@ -10,6 +11,16 @@ class RegistrationScreen extends StatefulWidget {
 class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Container(
+        decoration: kBackgroundDecor,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+
+          ],
+        ),
+      ),
+    );
   }
 }
