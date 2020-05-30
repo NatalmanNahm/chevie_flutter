@@ -1,7 +1,9 @@
+import 'package:cheviefutter/Screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:cheviefutter/constants.dart';
 import 'package:cheviefutter/Components/rounded_button.dart';
 import 'package:cheviefutter/Components/chevie_logo.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginScreen extends StatefulWidget {
 
@@ -12,6 +14,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+  String email;
+  String password;
+  final _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 decoration: kTextFieldDecor.copyWith(hintText: 'Email'),
                 textAlign: TextAlign.center,
                 cursorColor: Colors.white,
-                onChanged: (value) {},
+                onChanged: (value) {email = value;},
                 style: kTextFieldStyle,
               ),
 
@@ -42,15 +48,28 @@ class _LoginScreenState extends State<LoginScreen> {
                 decoration: kTextFieldDecor.copyWith(hintText: 'Password'),
                 textAlign: TextAlign.center,
                 cursorColor: Colors.white,
-                onChanged: (value) {},
+                onChanged: (value) {password = value;},
                 style: kTextFieldStyle,
               ),
 
               SizedBox(height: 18.0),
 
               RoundedButton(color: Colors.redAccent, buttonText: 'Login',
-                  onPress: null, topRight: 30.0, topLeft: 30.0,
-                  bottomRight: 30.0, bottomLeft: 30.0)
+                  topRight: 30.0, topLeft: 30.0, bottomRight: 30.0,
+                  bottomLeft: 30.0,
+                  onPress: () async {
+                    try{
+                      final newUser = await _auth.
+                      signInWithEmailAndPassword(email: email, password: password);
+
+                      if(newUser != null){
+                        Navigator.pushNamed(context, HomeScreen.id);
+                      }
+
+                    } catch (e){
+                      print(e);
+                    }
+                  })
 
             ],
           ),
