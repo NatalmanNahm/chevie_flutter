@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cheviefutter/Screens/welcome_screen.dart';
 import 'Screens/registration_screen.dart';
 import 'Screens/login_screen.dart';
+import 'Screens/home_screen.dart';
 
 void main() => runApp(Chevie());
 
@@ -14,6 +15,7 @@ class Chevie extends StatelessWidget {
         WelcomeScreen.id: (context) => WelcomeScreen(),
         RegistrationScreen.id: (context) => RegistrationScreen(),
         LoginScreen.id: (context) => LoginScreen(),
+        HomeScreen.id: (context) => HomeScreen(),
       },
     );
   }

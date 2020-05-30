@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "205823145820",
+    "firebase_url": "https://chevieflutter.firebaseio.com",
+    "project_id": "chevieflutter",
+    "storage_bucket": "chevieflutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205823145820:android:7aad32c80779cbb87b7399",
+        "android_client_info": {
+          "package_name": "com.example.cheviefutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "205823145820-64j8bcs2l8np9uoahhmpr5kink369kg4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4EYOg8xu5CWjbiinogppFJmyaLixSwJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "205823145820-64j8bcs2l8np9uoahhmpr5kink369kg4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
