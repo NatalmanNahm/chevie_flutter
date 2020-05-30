@@ -1,7 +1,10 @@
+import 'package:cheviefutter/Screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:cheviefutter/constants.dart';
 import 'package:cheviefutter/Components/rounded_button.dart';
 import 'package:cheviefutter/Components/chevie_logo.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
 
 class RegistrationScreen extends StatefulWidget {
 
@@ -11,6 +14,13 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
+
+  final _auth = FirebaseAuth.instance;
+  String username;
+  String email;
+  String password;
+  String confPassword;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,8 +40,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 keyboardType: TextInputType.text,
                 textAlign: TextAlign.center,
                 cursorColor: Colors.white,
-                onChanged: (value){},
-                decoration: kTextFieldDecor.copyWith(hintText: 'Username'),
+                onChanged: (value){ username = value; },
+                decoration: kTextFieldDecor.copyWith(hintText: 'Name'),
               ),
 
               SizedBox(
@@ -43,7 +53,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 keyboardType: TextInputType.emailAddress,
                 textAlign: TextAlign.center,
                 cursorColor: Colors.white,
-                onChanged: (value){},
+                onChanged: (value){ email = value; },
                 decoration: kTextFieldDecor.copyWith(hintText: 'Email'),
               ),
 
@@ -56,7 +66,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 obscureText: true,
                 textAlign: TextAlign.center,
                 cursorColor: Colors.white,
-                onChanged: (value){},
+                onChanged: (value){ password = value; },
                 decoration: kTextFieldDecor.copyWith(hintText: 'Password'),
               ),
 
@@ -69,7 +79,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 obscureText: true,
                 textAlign: TextAlign.center,
                 cursorColor: Colors.white,
-                onChanged: (value){},
+                onChanged: (value){ confPassword = value; },
                 decoration: kTextFieldDecor.copyWith(hintText: 'Comfirm Password'),
               ),
 
@@ -77,8 +87,29 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   height: 18.0
               ),
               RoundedButton(color: Colors.redAccent, buttonText: 'Register',
-                  onPress: null, topRight: 30.0, topLeft: 30.0,
-                  bottomRight: 30.0, bottomLeft: 30.0)
+                  topRight: 30.0, topLeft: 30.0, bottomRight: 30.0,
+                  bottomLeft: 30.0,
+                  onPress: () async {
+                    try{
+                      final newUser = await _auth.
+                      createUserWithEmailAndPassword(email: email, password: password);
+
+                      if(newUser != null && password == confPassword){
+                        Navigator.pushNamed(context, HomeScreen.id);
+                      } else {
+                        SnackBar(content:
+                          Text('Password do not match, Please try again')
+                        );
+                      }
+
+                    } catch (signUpError){
+                      if(signUpError is PlatformException) {
+                        if(signUpError.code == 'ERROR_EMAIL_ALREADY_IN_USE'){
+                          SnackBar(content: Text('User already exist'));
+                        }
+                      }
+                    }
+                  })
             ],
           ),
         ),
