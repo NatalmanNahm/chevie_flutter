@@ -1,9 +1,11 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:cheviefutter/Screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:cheviefutter/constants.dart';
 import 'package:cheviefutter/Components/rounded_button.dart';
 import 'package:cheviefutter/Components/chevie_logo.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
 
 class LoginScreen extends StatefulWidget {
 
@@ -66,8 +68,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.pushNamed(context, HomeScreen.id);
                       }
 
-                    } catch (e){
-                      print(e);
+                    } catch (signInError){
+                      if(signInError is PlatformException){
+                        if(signInError.code == 'ERROR_WRONG_PASSWORD') {
+                          BotToast.showText(text: 'Wrong Password! Please try again');
+                        }
+                      }
                     }
                   })
 
