@@ -69,9 +69,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       }
 
                     } catch (signInError){
+                      print(signInError);
                       if(signInError is PlatformException){
                         if(signInError.code == 'ERROR_WRONG_PASSWORD') {
-                          BotToast.showText(text: 'Wrong Password! Please try again');
+                          BotToast.showText(text: 'Wrong Password!');
+                        } else if(signInError.code == 'ERROR_INVALID_EMAIL'){
+                          BotToast.showText(text: 'Invalid Email!');
                         }
                       }
                     }
